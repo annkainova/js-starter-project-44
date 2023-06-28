@@ -8,6 +8,7 @@ import {
   getAnswer,
   getUncorrectAnswer,
   getCongrat,
+  getRandomSign,
 } from './index.js';
 
 welcome();
@@ -17,31 +18,32 @@ hello();
 console.log(userName);
 
 // Описание игры
-console.log(`Answer "yes" if the number is even, otherwise answer "no".
-`);
+console.log(`What is the result of the expression?`);
 
 let count = 0;
 const checkCorrect = () => {
   for (let index = 0; index < 3; index++) {
-    const randomNum = getRandomNumber();
+    const randomNumFirst = getRandomNumber();
+    const randomNumSecond = getRandomNumber();
+    const randomSign = getRandomSign();
 
     getQuestion();
-    console.log(randomNum);
-    const result = randomNum % 2 === 0 ? 'yes' : 'no';
+    console.log(`${randomNumFirst}${randomSign}${randomNumSecond}`);
 
     const userAnswer = getAnswer();
 
-    if (userAnswer !== 'yes' && userAnswer !== 'no') {
-      getUncorrectAnswer(userAnswer, result, userName);
-      break;
-    } else if (result !== userAnswer) {
-      getUncorrectAnswer(userAnswer, result, userName);
-      break;
-    }
-    count++;
-    console.log('Correct!');
-  }
+    const result = String(
+      eval(`${randomNumFirst}${randomSign}${randomNumSecond}`)
+    );
 
+    if (result !== userAnswer) {
+      getUncorrectAnswer(userAnswer, result, userName);
+      break;
+    } else {
+      count++;
+      console.log('Correct!');
+    }
+  }
   if (count === 3) {
     getCongrat(userName);
   }
