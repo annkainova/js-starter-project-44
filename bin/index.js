@@ -39,3 +39,13 @@ export const getRandomSign = () => {
   const randomIndex = Math.floor(Math.random() * value.length);
   return value[randomIndex];
 };
+
+export const getGCD = (number1, number2) => {
+  while (number2 !== 0) {
+    const remainder = number1 % number2;
+    number1 = number2;
+    number2 = remainder;
+  }
+  // возвращаем значение НОД
+  return String(number1);
+};
