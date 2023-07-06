@@ -75,6 +75,6 @@ export const isPrime = (number) => {
     if (number % i === 0) {
       return 'no';
     }
-    return 'yes';
   }
+  return 'yes';
 };
