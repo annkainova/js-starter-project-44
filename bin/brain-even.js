@@ -17,8 +17,7 @@ hello();
 console.log(userName);
 
 // Описание игры
-console.log(`Answer "yes" if the number is even, otherwise answer "no".
-`);
+console.log(`Answer "yes" if the number is even, otherwise answer "no".`);
 
 let count = 0;
 const checkCorrect = () => {
