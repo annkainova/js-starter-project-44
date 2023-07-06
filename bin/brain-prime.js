@@ -5,14 +5,10 @@ import {
   name,
   hello,
   getRandomNumber,
-  getRandomNumberLimit,
   getQuestion,
   getAnswer,
   getUncorrectAnswer,
   getCongrat,
-  getRandomSign,
-  getGCD,
-  arithmeticProgressive,
   isPrime,
 } from './index.js';
 
@@ -34,7 +30,8 @@ const checkCorrect = () => {
 
     // Ответ
     const userAnswer = getAnswer();
-    const result = String(isPrime(number));
+
+    const result = isPrime(number);
 
     if (result !== userAnswer) {
       getUncorrectAnswer(userAnswer, result, userName);

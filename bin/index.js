@@ -65,6 +65,7 @@ export const arithmeticProgressive = (start, step, length) => {
   return progression;
 };
 
+// правильное число
 export const isPrime = (number) => {
   if (number < 2) {
     return 'no';
@@ -74,6 +75,6 @@ export const isPrime = (number) => {
     if (number % i === 0) {
       return 'no';
     }
-    return 'yes;'
+    return 'yes';
   }
 };
