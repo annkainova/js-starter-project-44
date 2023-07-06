@@ -1,14 +1,16 @@
 #!/usr/bin/env node
+
 import {
   welcome,
   name,
   hello,
   getRandomNumber,
+  getRandomNumberLimit,
   getQuestion,
   getAnswer,
   getUncorrectAnswer,
   getCongrat,
-  getGCD,
+  arithmeticProgressive,
 } from './index.js';
 
 welcome();
@@ -18,20 +20,31 @@ hello();
 console.log(userName);
 
 // Описание игры
-console.log(`Find the greatest common divisor of given numbers.`);
+console.log(`What number is missing in the progression?`);
 
 let count = 0;
 const checkCorrect = () => {
   for (let index = 0; index < 3; index++) {
-    const randomNumFirst = getRandomNumber();
-    const randomNumSecond = getRandomNumber();
+    const start = getRandomNumber();
+    const step = getRandomNumberLimit(1, 10);
+    const length = getRandomNumberLimit(5, 15);
+    const index = getRandomNumberLimit(5, length);
 
+    const array = arithmeticProgressive(start, step, length);
+
+    const changeArray = (array, index) => {
+      const newArray = array.slice();
+      newArray[index - 1] = '..';
+      return newArray.join(' ');
+    };
+
+    // Вопрос
     getQuestion();
-    console.log(`${randomNumFirst} ${randomNumSecond}`);
+    console.log(changeArray(array, index));
 
+    // Ответ
     const userAnswer = getAnswer();
-
-    const result = getGCD(randomNumFirst, randomNumSecond);
+    const result = String(array[index - 1]);
 
     if (result !== userAnswer) {
       getUncorrectAnswer(userAnswer, result, userName);

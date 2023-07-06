@@ -16,6 +16,10 @@ export const getRandomNumber = () => {
   return Math.round(Math.random() * 100);
 };
 
+export const getRandomNumberLimit = (min, max) => {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+};
+
 export const getQuestion = () => {
   process.stdout.write('Question: ');
 };
@@ -48,4 +52,28 @@ export const getGCD = (number1, number2) => {
   }
   // возвращаем значение НОД
   return String(number1);
+};
+
+export const arithmeticProgressive = (start, step, length) => {
+  const progression = [];
+  let current = start;
+
+  for (let i = 0; i < length; i++) {
+    progression.push(current);
+    current += step;
+  }
+  return progression;
+};
+
+export const isPrime = (number) => {
+  if (number < 2) {
+    return 'no';
+  }
+
+  for (let i = 2; i < number; i++) {
+    if (number % i === 0) {
+      return 'no';
+    }
+    return 'yes;'
+  }
 };
