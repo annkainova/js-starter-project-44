@@ -28,7 +28,7 @@ const checkCorrect = () => {
     const randomSign = getRandomSign();
 
     getQuestion();
-    console.log(`${randomNumFirst}${randomSign}${randomNumSecond}`);
+    console.log(`${randomNumFirst} ${randomSign} ${randomNumSecond}`);
 
     const userAnswer = getAnswer();
 
