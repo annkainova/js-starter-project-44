@@ -28,7 +28,7 @@ const checkCorrect = () => {
     const start = getRandomNumber();
     const step = getRandomNumberLimit(1, 10);
     const length = getRandomNumberLimit(5, 15);
-    const number = getRandomNumberLimit(5, length);
+    const numberChange = getRandomNumberLimit(5, length);
 
     const array = arithmeticProgressive(start, step, length);
 
@@ -40,11 +40,11 @@ const checkCorrect = () => {
 
     // Вопрос
     getQuestion();
-    console.log(changeArray(array, number));
+    console.log(changeArray(array, numberChange));
 
     // Ответ
     const userAnswer = getAnswer();
-    const result = String(array[index - 1]);
+    const result = String(array[numberChange - 1]);
 
     if (result !== userAnswer) {
       getUncorrectAnswer(userAnswer, result, userName);
