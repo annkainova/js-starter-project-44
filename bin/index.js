@@ -70,7 +70,7 @@ export const calculateResultCalc = (num, sign, num2) => {
       return num + num2;
     case '-':
       return num - num2;
-    case '+':
+    case '*':
       return num * num2;
   }
 };
