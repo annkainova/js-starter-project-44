@@ -20,10 +20,11 @@ export const getUncorrectAnswer = (userAnswer, result, userName) =>
     `"${userAnswer}" is wrong answer ;(. Correct answer was "${result}".Let's try again, ${userName}!`
   );
 
-export const getCongrat = (userName) => console.log(`Congratulations, ${userName}!`);
+export const getCongrat = (userName) =>
+  console.log(`Congratulations, ${userName}!`);
 
 export const getRandomSign = () => {
-  const value = ['+', '-', '*',];
+  const value = ['+', '-', '*'];
   const randomIndex = Math.floor(Math.random() * value.length);
   return value[randomIndex];
 };
@@ -55,7 +56,7 @@ export const isPrime = (number) => {
     return 'no';
   }
 
-  for (let i = 2; i < number; i += 1) {
+  for (let i = 2; i < Math.sqrt(number); i += 1) {
     if (number % i === 0) {
       return 'no';
     }
