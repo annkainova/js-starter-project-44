@@ -1,45 +1,29 @@
 import readlineSync from 'readline-sync';
 
-export const welcome = () => {
-  console.log(`Welcome to the Brain Games!`);
-};
+export const welcome = () => console.log('Welcome to the Brain Games!');
 
-export const name = () => {
-  return readlineSync.question('May I have your name? ');
-};
+export const name = () => readlineSync.question('May I have your name? ');
 
-export const hello = () => {
-  process.stdout.write('Hello, ');
-};
+export const hello = () => process.stdout.write('Hello, ');
 
-export const getRandomNumber = () => {
-  return Math.round(Math.random() * 100);
-};
+export const getRandomNumber = () => Math.round(Math.random() * 100);
 
-export const getRandomNumberLimit = (min, max) => {
-  return Math.floor(Math.random() * (max - min + 1) + min);
-};
+export const getRandomNumberLimit = (min, max) =>
+  Math.floor(Math.random() * (max - min + 1) + min);
 
-export const getQuestion = () => {
-  process.stdout.write('Question: ');
-};
+export const getQuestion = () => process.stdout.write('Question: ');
 
-export const getAnswer = () => {
-  return readlineSync.question('Your answer: ');
-};
+export const getAnswer = () => readlineSync.question('Your answer: ');
 
-export const getUncorrectAnswer = (userAnswer, result, userName) => {
+export const getUncorrectAnswer = (userAnswer, result, userName) =>
   console.log(
     `"${userAnswer}" is wrong answer ;(. Correct answer was "${result}".Let's try again, ${userName}!`
   );
-};
 
-export const getCongrat = (userName) => {
-  console.log(`Congratulations, ${userName}!`);
-};
+export const getCongrat = (userName) => console.log(`Congratulations, ${userName}!`);
 
 export const getRandomSign = () => {
-  const value = ['+', '-', '*'];
+  const value = ['+', '-', '*',];
   const randomIndex = Math.floor(Math.random() * value.length);
   return value[randomIndex];
 };
@@ -77,4 +61,15 @@ export const isPrime = (number) => {
     }
   }
   return 'yes';
+};
+
+export const calculateResultCalc = (num, sign, num2) => {
+  switch (sign) {
+    case '+':
+      return num + num2;
+    case '-':
+      return num - num2;
+    case '+':
+      return num * num2;
+  }
 };

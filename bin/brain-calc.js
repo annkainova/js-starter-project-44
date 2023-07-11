@@ -9,6 +9,7 @@ import {
   getUncorrectAnswer,
   getCongrat,
   getRandomSign,
+  calculateResultCalc,
 } from './index.js';
 
 welcome();
@@ -33,7 +34,7 @@ const checkCorrect = () => {
     const userAnswer = getAnswer();
 
     const result = String(
-      eval(`${randomNumFirst}${randomSign}${randomNumSecond}`)
+      calculateResultCalc(randomNumFirst, randomSign, randomNumSecond)
     );
 
     if (result !== userAnswer) {
