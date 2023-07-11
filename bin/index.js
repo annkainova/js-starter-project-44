@@ -58,7 +58,7 @@ export const arithmeticProgressive = (start, step, length) => {
   const progression = [];
   let current = start;
 
-  for (let i = 0; i < length; i++) {
+  for (let i = 0; i < length; i += 1) {
     progression.push(current);
     current += step;
   }
@@ -71,7 +71,7 @@ export const isPrime = (number) => {
     return 'no';
   }
 
-  for (let i = 2; i < number; i++) {
+  for (let i = 2; i < number; i += 1) {
     if (number % i === 0) {
       return 'no';
     }

@@ -19,10 +19,10 @@ hello();
 console.log(userName);
 
 // Описание игры
-console.log(`Answer "yes" if given number is prime. Otherwise answer "no"`);
+console.log('Answer "yes" if given number is prime. Otherwise answer "no"');
 let count = 0;
 const checkCorrect = () => {
-  for (let index = 0; index < 3; index++) {
+  for (let index = 0; index < 3; index += 1) {
     const number = getRandomNumber();
     // Вопрос
     getQuestion();
@@ -37,7 +37,7 @@ const checkCorrect = () => {
       getUncorrectAnswer(userAnswer, result, userName);
       break;
     } else {
-      count++;
+      count += 1;
       console.log('Correct!');
     }
   }

@@ -20,27 +20,27 @@ hello();
 console.log(userName);
 
 // Описание игры
-console.log(`What number is missing in the progression?`);
+console.log('What number is missing in the progression?');
 
 let count = 0;
 const checkCorrect = () => {
-  for (let index = 0; index < 3; index++) {
+  for (let index = 0; index < 3; index += 1) {
     const start = getRandomNumber();
     const step = getRandomNumberLimit(1, 10);
     const length = getRandomNumberLimit(5, 15);
-    const index = getRandomNumberLimit(5, length);
+    const number = getRandomNumberLimit(5, length);
 
     const array = arithmeticProgressive(start, step, length);
 
-    const changeArray = (array, index) => {
-      const newArray = array.slice();
-      newArray[index - 1] = '..';
+    const changeArray = (arr, ind) => {
+      const newArray = arr.slice();
+      newArray[ind - 1] = '..';
       return newArray.join(' ');
     };
 
     // Вопрос
     getQuestion();
-    console.log(changeArray(array, index));
+    console.log(changeArray(array, number));
 
     // Ответ
     const userAnswer = getAnswer();
@@ -50,7 +50,7 @@ const checkCorrect = () => {
       getUncorrectAnswer(userAnswer, result, userName);
       break;
     } else {
-      count++;
+      count += 1;
       console.log('Correct!');
     }
   }

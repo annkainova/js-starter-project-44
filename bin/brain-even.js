@@ -17,11 +17,11 @@ hello();
 console.log(userName);
 
 // Описание игры
-console.log(`Answer "yes" if the number is even, otherwise answer "no".`);
+console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
 let count = 0;
 const checkCorrect = () => {
-  for (let index = 0; index < 3; index++) {
+  for (let index = 0; index < 3; index += 1) {
     const randomNum = getRandomNumber();
 
     getQuestion();
@@ -37,7 +37,7 @@ const checkCorrect = () => {
       getUncorrectAnswer(userAnswer, result, userName);
       break;
     }
-    count++;
+    count += 1;
     console.log('Correct!');
   }
 
