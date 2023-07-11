@@ -8,20 +8,20 @@ export const hello = () => process.stdout.write('Hello, ');
 
 export const getRandomNumber = () => Math.round(Math.random() * 100);
 
-export const getRandomNumberLimit = (min, max) =>
-  Math.floor(Math.random() * (max - min + 1) + min);
+// prettier-ignore
+export const getRandomNumberLimit = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 
 export const getQuestion = () => process.stdout.write('Question: ');
 
 export const getAnswer = () => readlineSync.question('Your answer: ');
 
 export const getUncorrectAnswer = (userAnswer, result, userName) =>
-  console.log(
-    `"${userAnswer}" is wrong answer ;(. Correct answer was "${result}".Let's try again, ${userName}!`
+  // prettier-ignore
+  console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${result}".Let's try again, ${userName}!`
   );
 
-export const getCongrat = (userName) =>
-  console.log(`Congratulations, ${userName}!`);
+// prettier-ignore
+export const getCongrat = (userName) => console.log(`Congratulations, ${userName}!`);
 
 export const getRandomSign = () => {
   const value = ['+', '-', '*'];
@@ -30,10 +30,12 @@ export const getRandomSign = () => {
 };
 
 export const getGCD = (number1, number2) => {
-  while (number2 !== 0) {
-    const remainder = number1 % number2;
-    number1 = number2;
-    number2 = remainder;
+  let num1 = number1;
+  let num2 = number2;
+  while (num2 !== 0) {
+    const remainder = num1 % num2;
+    num1 = number2;
+    num2 = remainder;
   }
   // возвращаем значение НОД
   return String(number1);
@@ -54,14 +56,14 @@ export const arithmeticProgressive = (start, step, length) => {
 export const isPrime = (number) => {
   if (number < 2) {
     return 'no';
-  }
-
-  for (let i = 2; i < Math.sqrt(number); i += 1) {
-    if (number % i === 0) {
-      return 'no';
+  } else {
+    for (let i = 2; i < Math.sqrt(number); i += 1) {
+      if (number % i === 0) {
+        return 'no';
+      }
     }
+    return 'yes';
   }
-  return 'yes';
 };
 
 export const calculateResultCalc = (num, sign, num2) => {
@@ -72,5 +74,7 @@ export const calculateResultCalc = (num, sign, num2) => {
       return num - num2;
     case '*':
       return num * num2;
+    default:
+      return 'unknown';
   }
 };
