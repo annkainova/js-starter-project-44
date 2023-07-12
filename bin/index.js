@@ -15,9 +15,8 @@ export const getQuestion = () => process.stdout.write('Question: ');
 
 export const getAnswer = () => readlineSync.question('Your answer: ');
 
-export const getUncorrectAnswer = (userAnswer, result, userName) =>
-  // prettier-ignore
-  console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${result}".Let's try again, ${userName}!`);
+// prettier-ignore
+export const getUncorrectAnswer = (userAnswer, result, userName) => console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${result}".Let's try again, ${userName}!`);
 
 // prettier-ignore
 export const getCongrat = (userName) => console.log(`Congratulations, ${userName}!`);
