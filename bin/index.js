@@ -34,11 +34,11 @@ export const getGCD = (number1, number2) => {
   let num2 = number2;
   while (num2 !== 0) {
     const remainder = num1 % num2;
-    num1 = number2;
+    num1 = num2;
     num2 = remainder;
   }
   // возвращаем значение НОД
-  return String(number1);
+  return String(num1);
 };
 
 export const arithmeticProgressive = (start, step, length) => {
