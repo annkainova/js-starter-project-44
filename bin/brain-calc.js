@@ -33,9 +33,8 @@ const checkCorrect = () => {
 
     const userAnswer = getAnswer();
 
-    const result = String(
-      calculateResultCalc(randomNumFirst, randomSign, randomNumSecond)
-    );
+    // prettier-ignore
+    const result = String(calculateResultCalc(randomNumFirst, randomSign, randomNumSecond));
 
     if (result !== userAnswer) {
       getUncorrectAnswer(userAnswer, result, userName);

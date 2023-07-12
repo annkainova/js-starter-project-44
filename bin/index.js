@@ -17,8 +17,7 @@ export const getAnswer = () => readlineSync.question('Your answer: ');
 
 export const getUncorrectAnswer = (userAnswer, result, userName) =>
   // prettier-ignore
-  console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${result}".Let's try again, ${userName}!`
-  );
+  console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${result}".Let's try again, ${userName}!`);
 
 // prettier-ignore
 export const getCongrat = (userName) => console.log(`Congratulations, ${userName}!`);
@@ -56,14 +55,13 @@ export const arithmeticProgressive = (start, step, length) => {
 export const isPrime = (number) => {
   if (number < 2) {
     return 'no';
-  } else {
-    for (let i = 2; i < Math.sqrt(number); i += 1) {
-      if (number % i === 0) {
-        return 'no';
-      }
-    }
-    return 'yes';
   }
+  for (let i = 2; i < Math.sqrt(number); i += 1) {
+    if (number % i === 0) {
+      return 'no';
+    }
+  }
+  return 'yes';
 };
 
 export const calculateResultCalc = (num, sign, num2) => {
